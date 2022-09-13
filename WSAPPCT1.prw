@@ -13,7 +13,7 @@ WsRestful apict1 Description "WebService REST para testes"
 
     WsMethod GET Description "Sincronização de dados via GET" WsSyntax "/GET/{method}"
 
-End WsRestful
+End WsRestful  
 
 WsMethod GET WsService apict1
 
