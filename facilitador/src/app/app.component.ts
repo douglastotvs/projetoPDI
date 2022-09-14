@@ -186,5 +186,9 @@ export class AppComponent implements OnInit {
     return ''
   }
 
+  teste(){
+    alert('Hello world!!!')
+  }
+
 
 }

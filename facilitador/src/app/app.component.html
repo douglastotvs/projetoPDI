@@ -6,10 +6,10 @@
     [p-menus]="menus" 
   ></po-menu>
   <po-page-default>
-     <div class="main">
-        <po-widget class="column1">
+     <div class="po-row mt-15">
+        <po-container class="po-xl-8 po-lg-8 po-md-8 po-sm-8" [p-height]="710">
            <h2 class="mb-15">CVN - Plano de Contas Referencial</h2>
-           <div class="main-column" >
+           <div class="po-row" >
               <po-table
                 [p-auto-collapse]="true"
                 [p-columns]="columns"
@@ -24,7 +24,7 @@
                 (p-unselected)="unselectedItem()"
                 [p-selectable-entire-line]="true"
                 (p-expanded)="showItem($event)"
-                [p-height]="578"
+
               >
               <ng-template
                 p-table-row-template
@@ -32,7 +32,7 @@
                 let-i="rowIndex"
                 [p-table-row-template-show]="isUndelivered"
               >
-              <po-widget>
+              <!--<po-widget>
                 <div class="po-row">
                   <po-table
                     [p-auto-collapse]="true"
@@ -61,20 +61,26 @@
                           (p-click)="saveForm()"> 
                         </po-button>
                     </ng-template>
-                  </po-table>
+                  </po-table> 
+          
                 </div>
-              </po-widget>
+              </po-widget>-->
+
+              <po-grid [p-data]="rowItem.subItm" [p-columns]="columns2"> </po-grid>
               </ng-template>
               </po-table>
            </div>
-        </po-widget>
+        </po-container>
         
-        <div class="column2">
-          <po-widget>
+        <div class="po-xl-4 po-lg-4 po-md-4 po-sm-4">
+          <po-container [p-height]="658">
             <h2 class="mb-15">CT1 - Plano de Contas</h2>
+            
+            <po-input class="po-md-6" name="searchct1" p-placeholder="Pesquisar..." p-clean > </po-input>
+            <po-button p-icon="po-icon po-icon-search po-field-icon"></po-button>
+
             <po-table
               p-container="true"
-              [p-height]="520"
               [p-hide-text-overflow]="true"
               [p-selectable]="true"
               [p-sort]="true"
@@ -83,7 +89,7 @@
               [p-items]="items1"
               [p-hide-select-all]="true"
             ></po-table>
-          </po-widget>
+          </po-container>
           <po-button class="buttomExit" p-label="Atribuir" (p-click)="check()"> </po-button>
         </div>
 
