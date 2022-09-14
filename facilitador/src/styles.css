@@ -1,0 +1,52 @@
+:root{
+    --color-primary:#027F9E;
+    --color-checkbox-border-input-active:#027F9E;
+    --color-checkbox-background-color-active:#027F9E;
+    --color-action-default:#027F9E;
+    --color-action-hover: #036279;
+    --color-action-pressed: #014151;
+    --color-action-focus: #012C37;
+    --border-color-hover: #036279;
+    --background-hover: #B4C0C3;
+    --background-pressed: #C4ECF5;
+    --color-table-box-shadow-header: #C4ECF5;
+}
+
+.po-menu, 
+.po-menu-item-grouper-up, 
+.po-menu-item-grouper-up:hover, 
+.po-menu-sub-items{
+    background-color: #363636;
+    color: white;
+}
+
+.po-menu-item{
+    color: white;
+    border-top: 0px ;
+}
+
+.po-menu-item:hover{
+    color: #027F9E;
+    border-top: 0px ;
+}
+
+.po-menu-header-container-logo{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.po-menu-short-logo{
+    width: 80%;
+}
+
+.po-icon-menu-open{
+    color: white;
+}
+
+.po-icon:hover{
+    color:  #027F9E;
+}
+
+.po-icon-settings{
+    color:  #027F9E;
+}

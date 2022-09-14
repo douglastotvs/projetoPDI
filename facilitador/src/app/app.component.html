@@ -1,0 +1,92 @@
+<div class="po-wrapper">
+  <po-menu 
+    p-logo="../assets/logo.png" 
+    p-short-logo="../assets/shortlogo.png" 
+    [p-collapsed]="true" 
+    [p-menus]="menus" 
+  ></po-menu>
+  <po-page-default>
+     <div class="main">
+        <po-widget class="column1">
+           <h2 class="mb-15">CVN - Plano de Contas Referencial</h2>
+           <div class="main-column" >
+              <po-table
+                [p-auto-collapse]="true"
+                [p-columns]="columns"
+                [p-hide-columns-manager]="true"
+                [p-items]="items"
+                [p-sort]="true"
+                [p-striped]="true"
+                [p-hide-select-all]="true"
+                [p-selectable]="true"
+                [p-single-select]="true"
+                (p-selected)="selectedItem($event)"
+                (p-unselected)="unselectedItem()"
+                [p-selectable-entire-line]="true"
+                (p-expanded)="showItem($event)"
+                [p-height]="578"
+              >
+              <ng-template
+                p-table-row-template
+                let-rowItem
+                let-i="rowIndex"
+                [p-table-row-template-show]="isUndelivered"
+              >
+              <po-widget>
+                <div class="po-row">
+                  <po-table
+                    [p-auto-collapse]="true"
+                    [p-columns]="columns2"
+                    [p-hide-columns-manager]="true"
+                    [p-items]="rowItem.subItm"
+                    [p-sort]="true"
+                    [p-striped]="true"
+                    (p-expanded)="showSubItem($event)"
+                  >
+                    <ng-template
+                      p-table-row-template
+                      let-rowItem
+                      let-i="rowIndex"
+                    >
+                        <div class="po-row">
+                          <form [formGroup]="reactiveForm">
+                            <po-input class="po-md-4" formControlName="campo1" p-clean  p-label="Campo 1"> </po-input>
+                            <po-input class="po-lg-4" formControlName="campo2" p-clean p-label="Campo 2"> </po-input>
+                          </form>
+                        </div>
+                        <po-button 
+                          class="confirmBtn" 
+                          p-label="Confirmar" 
+                          [p-disabled]="!reactiveForm.valid" 
+                          (p-click)="saveForm()"> 
+                        </po-button>
+                    </ng-template>
+                  </po-table>
+                </div>
+              </po-widget>
+              </ng-template>
+              </po-table>
+           </div>
+        </po-widget>
+        
+        <div class="column2">
+          <po-widget>
+            <h2 class="mb-15">CT1 - Plano de Contas</h2>
+            <po-table
+              p-container="true"
+              [p-height]="520"
+              [p-hide-text-overflow]="true"
+              [p-selectable]="true"
+              [p-sort]="true"
+              [p-striped]="true"
+              [p-columns]="columns1"
+              [p-items]="items1"
+              [p-hide-select-all]="true"
+            ></po-table>
+          </po-widget>
+          <po-button class="buttomExit" p-label="Atribuir" (p-click)="check()"> </po-button>
+        </div>
+
+     </div>
+  </po-page-default>
+</div>

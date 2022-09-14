@@ -1,0 +1,40 @@
+.main{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    height: 100%;
+}
+
+.main-column{
+    display: flex;
+    justify-content: space-between;
+    flex-direction:column;
+    height: 90%;
+}
+
+.column1{
+    width: 69%;
+    border-width: 1 solid;
+}
+
+.column2{
+    width: 29%;
+    border-width: 1 solid;
+}
+
+.buttomExit{
+    justify-content: flex-start;
+    display: flex;
+    margin-top: 10px;
+}
+
+.confirmBtn{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+.mb-15{
+    margin-bottom: 15px;
+}
